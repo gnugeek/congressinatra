@@ -1,9 +1,14 @@
 require 'rubygems'
 require 'sinatra/base'
 require 'haml'
+require 'xmlsimple'
+require 'net/http'
 require 'rollcall'
+require 'members'
+require 'votes'
+require 'bio'
 
-APIKEY = ""
+APIKEY = "32cba725aa2f8bad440a7d428f3ef23f:11:57686948"
 
 class Congressinatra < Sinatra::Base
   
@@ -18,7 +23,35 @@ class Congressinatra < Sinatra::Base
   get '/' do
     haml :index
   end
-    
+  
+  # http://localhost:3000/congress/109/house/members  
+  get '/congress/:congress/:chamber/members' do
+    @congress = params[:congress]
+    @chamber = params[:chamber]
+    url = "http://api.nytimes.com/svc/politics/v2/us/legislative/congress/#{@congress}/#{@chamber}/members?api-key=#{APIKEY}"
+    xml_data = Net::HTTP.get_response(URI.parse(url)).body
+    @m = Members.new(xml_data)
+    raise @m.inspect
+  end
+  
+  # http://localhost:3000/congress/members/C001041/votes
+  get '/congress/members/:member_id/votes' do
+    @member_id = params[:member_id]
+    url = "http://api.nytimes.com/svc/politics/v2/us/legislative/congress/members/#{@member_id}/votes?api-key=#{APIKEY}"
+    xml_data = Net::HTTP.get_response(URI.parse(url)).body
+    @v = Votes.new(xml_data)
+    raise @v.inspect
+  end
+  
+  # http://localhost:3000/congress/members/L000447
+  get '/congress/members/:member_id' do
+    @member_id = params[:member_id]
+    url = "http://api.nytimes.com/svc/politics/v2/us/legislative/congress/members/#{@member_id}?api-key=#{APIKEY}"
+    xml_data = Net::HTTP.get_response(URI.parse(url)).body
+    @b = Bio.new(xml_data)
+    raise @b.inspect
+  end
+  
   # http://localhost:3000/congress/110/senate/sessions/2/votes/194  
   get '/congress/:congress/:chamber/sessions/:session/votes/:votes' do
     @congress = params[:congress]

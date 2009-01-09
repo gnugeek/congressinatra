@@ -1,6 +1,3 @@
-require 'xmlsimple'
-require 'net/http'
-
 class Rollcall
   
   def initialize(xml)
