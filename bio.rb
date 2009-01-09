@@ -1,5 +1,4 @@
 class Bio
-  
   def initialize(xml)
     @data = XmlSimple.xml_in(xml)
   end

@@ -1,5 +1,4 @@
 class Votes
-  
   def initialize(xml)
     @data = XmlSimple.xml_in(xml)
   end
@@ -7,5 +6,4 @@ class Votes
   def data
     @data
   end
-  
 end

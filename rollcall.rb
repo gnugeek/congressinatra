@@ -1,5 +1,4 @@
 class Rollcall
-  
   def initialize(xml)
     @data = XmlSimple.xml_in(xml)
   end
@@ -111,5 +110,4 @@ class Rollcall
   def question
     data['results'].first['votes'].first['vote'].first['question'].first
   end
-  
 end

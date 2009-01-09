@@ -30,8 +30,9 @@ class Congressinatra < Sinatra::Base
     @chamber = params[:chamber]
     url = "http://api.nytimes.com/svc/politics/v2/us/legislative/congress/#{@congress}/#{@chamber}/members?api-key=#{APIKEY}"
     xml_data = Net::HTTP.get_response(URI.parse(url)).body
-    @m = Members.new(xml_data)
-    raise @m.inspect
+    m = Members.new(xml_data)
+    @m = m.data["results"].first["members"].first["member"]
+    haml :members
   end
   
   # http://localhost:3000/congress/members/C001041/votes
@@ -113,6 +114,26 @@ __END__
       Micronatra Source:
       %a{:href=>("http://github.com/gnugeek/micronatra/tree/master")}= "http://github.com/gnugeek/micronatra/tree/master"
 
+@@members
+#member_list
+%table
+  %caption Congressional Members
+  %thead
+    %tr
+      %th name
+      %th id
+      %th party
+      %th state
+  %tbody
+  - @m.each do |member|
+    %tr
+      %td= member['name'].first
+      %td= member['id'].first
+      %td= member['party'].first
+      %td= member['state'].first
+    
+  %tr
+    %th
 @@rollcall
 #bill_info
   %table
