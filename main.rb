@@ -8,7 +8,7 @@ require 'members'
 require 'votes'
 require 'bio'
 
-APIKEY = "32cba725aa2f8bad440a7d428f3ef23f:11:57686948"
+APIKEY = ""
 
 class Congressinatra < Sinatra::Base
   
