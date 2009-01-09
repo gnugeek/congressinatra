@@ -36,23 +36,6 @@ class Congressinatra < Sinatra::Base
     sass :style
   end
 
-  private
- 
-  def auth_required
-    return session[:authenticated] if session[:authenticated]
-    session[:requested] = request.fullpath
-    redirect '/login'
-  end
-
-  def continue
-    redirect session[:requested] if session[:requested]
-    redirect '/'
-  end
-
-  def authenticate(login,password)
-    login == 'admin' && password == 'admin'
-  end
-
 end
 
 __END__
@@ -96,18 +79,6 @@ __END__
     %li
       Micronatra Source:
       %a{:href=>("http://github.com/gnugeek/micronatra/tree/master")}= "http://github.com/gnugeek/micronatra/tree/master"
-
-
-@@login
-#login-form
-%form{:method => "post", :action => "/login"}
-  .label Login: 
-  %input{:id=>"login", :name=>"login", :size=>"30", :type=>"text"}
-  .label Password
-  %input{:id=>"password", :name=>"password", :size=>30, :type=>"password"}
-  %p
-  .button
-    %input{:type=>"submit", :value=>"login"}
 
 @@rollcall
 #bill_info
