@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'sinatra/base'
 require 'haml'
+require 'yaml'
 require 'xmlsimple'
 require 'net/http'
 require 'rollcall'
@@ -8,7 +9,8 @@ require 'members'
 require 'votes'
 require 'bio'
 
-APIKEY = ""
+CONFIG = YAML.load_file('config.yml') unless defined?(CONFIG)
+APIKEY = CONFIG['apikey'] unless defined?(APIKEY)
 
 class Congressinatra < Sinatra::Base
   
@@ -40,8 +42,9 @@ class Congressinatra < Sinatra::Base
     @member_id = params[:member_id]
     url = "http://api.nytimes.com/svc/politics/v2/us/legislative/congress/members/#{@member_id}/votes?api-key=#{APIKEY}"
     xml_data = Net::HTTP.get_response(URI.parse(url)).body
-    @v = Votes.new(xml_data)
-    raise @v.inspect
+    v = Votes.new(xml_data)
+    @v = v.data["results"].first["votes"].first["vote"]
+    haml :votes
   end
   
   # http://localhost:3000/congress/members/L000447
@@ -114,6 +117,33 @@ __END__
       Micronatra Source:
       %a{:href=>("http://github.com/gnugeek/micronatra/tree/master")}= "http://github.com/gnugeek/micronatra/tree/master"
 
+@@votes
+#votes
+%table
+  %caption= "Votes for #{@member_id}"
+  %thead
+    %tr
+      %th chamber
+      %th time
+      %th date
+      %th roll_call
+      %th session
+      %th congress
+      %th position
+      %th rollcall
+  %tbody
+  - @v.each do |vote|
+    %tr
+      %td= vote['chamber'].first
+      %td= vote['time'].first
+      %td= vote['date'].first
+      %td= vote['roll_call'].first
+      %td= vote['session'].first
+      %td= vote['congress'].first
+      %td= vote['position'].first
+      %td
+        %a{:href=>("/congress/#{vote['congress']}/#{vote['chamber']}/sessions/#{vote['session']}/votes/#{vote['roll_call']}")}= "link"
+      
 @@members
 #member_list
 %table
