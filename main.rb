@@ -2,7 +2,7 @@ require 'rubygems'
 require 'sinatra/base'
 require 'haml'
 require 'yaml'
-require 'congress_api'
+require 'congress_api/base'
 
 class Congressinatra < Sinatra::Base
   
@@ -11,8 +11,8 @@ class Congressinatra < Sinatra::Base
   use_in_file_templates!
 
   use Rack::Lint
-  set :logging, true # use Rack::CommonLogger
-  set :sessions, true # use Rack::Session::Cookie
+  set :logging, true
+  set :sessions, true
 
   get '/' do
     haml :index
@@ -20,41 +20,25 @@ class Congressinatra < Sinatra::Base
   
   # http://localhost:3000/congress/109/house/members  
   get '/congress/:congress/:chamber/members' do
-    @congress = params[:congress]
-    @chamber = params[:chamber]
-    url = "http://api.nytimes.com/svc/politics/v2/us/legislative/congress/#{@congress}/#{@chamber}/members?api-key=#{APIKEY}"
-    xml_data = Net::HTTP.get_response(URI.parse(url)).body
-    m = Members.new(xml_data)
-    @m = m.data["results"].first["members"].first["member"]
+    @member_list = CongressApi::Members.new(params)
     haml :members
   end
   
   # http://localhost:3000/congress/members/C001041/votes
   get '/congress/members/:member_id/votes' do
-    @member_id = params[:member_id]
-    url = "http://api.nytimes.com/svc/politics/v2/us/legislative/congress/members/#{@member_id}/votes?api-key=#{APIKEY}"
-    xml_data = Net::HTTP.get_response(URI.parse(url)).body
-    v = Votes.new(xml_data)
-    @v = v.data["results"].first["votes"].first["vote"]
+    @votes = CongressApi::Votes.new(params)
     haml :votes
   end
   
   # http://localhost:3000/congress/members/L000447
   get '/congress/members/:member_id' do
-    @member_id = params[:member_id]
-    url = "http://api.nytimes.com/svc/politics/v2/us/legislative/congress/members/#{@member_id}?api-key=#{APIKEY}"
-    xml_data = Net::HTTP.get_response(URI.parse(url)).body
-    @b = Bio.new(xml_data)
-    raise @b.inspect
+    @bio = CongressApi::Bio.new(params)
+    haml :bio
   end
   
   # http://localhost:3000/congress/110/senate/sessions/2/votes/194  
   get '/congress/:congress/:chamber/sessions/:session/votes/:rollcall' do
-    @congress = params[:congress]
-    @chamber = params[:chamber]
-    @session = params[:session]
-    @rollcall = params[:votes]
-    @rc = Rollcall.find_or_create(params)
+    @rc = CongressApi::Rollcall.new(params)
     haml :rollcall
   end
 
@@ -84,7 +68,20 @@ __END__
 
 @@index
 #content
+  
   Congressinatra is a small test application written with the Ruby "Sinatra" framework.
+   
+  %h3 Sample Queries
+  %ul
+    %li
+      %a{:href=>("http://localhost:3000/congress/109/house/members")}= "http://localhost:3000/congress/109/house/members"
+    %li
+      %a{:href=>("http://localhost:3000/congress/members/C001041/votes")}= "http://localhost:3000/congress/members/C001041/votes"
+    %li
+      %a{:href=>("http://localhost:3000/congress/members/L000447")}= "http://localhost:3000/congress/members/L000447"
+    %li
+      %a{:href=>("http://localhost:3000/congress/110/senate/sessions/2/votes/194")}= "http://localhost:3000/congress/110/senate/sessions/2/votes/194"
+      
   Sinatra is a DSL for quickly creating web-applications in Ruby with minimal effort.
   I find Sinatra to be an elegant implementation of the UNIX design philosophy:
   %blockquote
@@ -146,14 +143,14 @@ __END__
       %th state
       %th record
   %tbody
-  - @m.each do |member|
+  - @member_list.members.each do |member|
     %tr
-      %td= member['name'].first
-      %td= member['id'].first
-      %td= member['party'].first
-      %td= member['state'].first
+      %td= member.name
+      %td= member.id
+      %td= member.party
+      %td= member.state
       %td
-        %a{:href=>("http://localhost:3000/congress/members/#{member['id']}/votes")}= "link"
+        %a{:href=>("http://localhost:3000/congress/members/#{member.id}/votes")}= "link"
     
   %tr
     %th
@@ -179,10 +176,10 @@ __END__
       %td= @rc.democratic_majority_position
     %tr
       %th Yes Votes
-      %td= @rc.democratic_yes_votes
+      %td= @rc.democratic_yes
     %tr
       %th No Votes
-      %td= @rc.democratic_no_votes
+      %td= @rc.democratic_no
     %tr
       %th Voted Present
       %td= @rc.democratic_present
@@ -198,10 +195,10 @@ __END__
       %td= @rc.republican_majority_position
     %tr
       %th Yes Votes
-      %td= @rc.republican_yes_votes
+      %td= @rc.republican_yes
     %tr
       %th No Votes
-      %td= @rc.republican_no_votes
+      %td= @rc.republican_no
     %tr
       %th Voted Present
       %td= @rc.republican_present
@@ -214,13 +211,14 @@ __END__
     %caption Independent Vote
     %tr
       %th Majority Position
-      %td= @rc.independent_majority_position
+      %td= 'N/A'
+      
     %tr
       %th Yes Votes
-      %td= @rc.independent_yes_votes
+      %td= @rc.independent_yes
     %tr
       %th No Votes
-      %td= @rc.independent_no_votes
+      %td= @rc.independent_no
     %tr
       %th Voted Present
       %td= @rc.independent_present
