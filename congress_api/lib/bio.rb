@@ -15,7 +15,7 @@ module CongressApi
   end
   
   class Bio
-    attr_reader :id, :name, :date_of_birth, :gender, :url, :govtrack_id, :roles, :doc
+    attr_reader :member_id, :name, :date_of_birth, :gender, :url, :govtrack_id, :roles, :doc
     
     def initialize(params)
       @roles = []

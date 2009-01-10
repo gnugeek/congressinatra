@@ -62,7 +62,6 @@ __END__
       Congressinatra
     #nav 
       %a{:href=>("/")}= "HOME"
-      %a{:href=>("/logout" )}= "LOGOUT"
     #content
       = yield
 
@@ -130,7 +129,53 @@ __END__
       %td= vote.position
       %td
         %a{:href=>("/congress/#{vote.congress}/#{vote.chamber}/sessions/#{vote.session}/votes/#{vote.roll_call}")}= "link"
+
+@@bio
+#bio
+%table
+  %caption Bio Information
+  %tbody
+    %tr
+      %th id
+      %td= @bio.member_id
+    %tr
+      %th name
+      %td= @bio.name
+    %tr
+      %th date_of_birth
+      %td= @bio.date_of_birth
+    %tr
+      %th gender
+      %td= @bio.gender
+    %tr
+      %th url
+      %td= @bio.url
+    %tr
+      %th govtrack_id
+      %td= @bio.govtrack_id
       
+%table
+  %caption Roles
+  %thead
+    %tr
+      %th congress
+      %th chamber
+      %th title
+      %th state
+      %th party
+      %th start_date
+      %th end_date
+  %tbody
+  - @bio.roles.each do |role|
+    %tr
+      %td= role.congress
+      %td= role.chamber
+      %td= role.title
+      %td= role.state
+      %td= role.party
+      %td= role.start_date
+      %td= role.end_date
+    
 @@members
 #member_list
 %table
