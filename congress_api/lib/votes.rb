@@ -15,7 +15,7 @@ module CongressApi
   end
    
   class Votes
-    attr_reader :votes
+    attr_reader :votes, :member_id
     
     def initialize(params)
       @member_id = params[:member_id]

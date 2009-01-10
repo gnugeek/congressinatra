@@ -20,6 +20,7 @@ module CongressApi
     def initialize(params)
       @roles = []
       @member_id = params[:member_id]
+      
       @url = "http://api.nytimes.com/svc/politics/v2/us/legislative/congress/members/#{@member_id}?api-key=#{APIKEY}"
       @doc = parse(@url)
       @name = @doc.search('//member/name').first.inner_html

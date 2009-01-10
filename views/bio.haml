@@ -16,10 +16,12 @@
       %td.gender= @bio.gender
     %tr
       %th.url url
-      %td.url= @bio.url
+      %td.url
+        %a{:href=>(@bio.url)}= @bio.url
     %tr
-      %th.govtrack_id govtrack_id
-      %td.govtrack_id= @bio.govtrack_id
+      %th.govtrack govtrack
+      %td
+        %a{:href=>("http://www.govtrack.us/congress/person.xpd?id=#{@bio.govtrack_id}")}= "http://www.govtrack.us/congress/person.xpd?id=#{@bio.govtrack_id}"
       
 %table.roles
   %caption Roles

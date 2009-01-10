@@ -1,22 +1,22 @@
 #member_list
-%table
+%table.member_list
   %caption Congressional Members
   %thead
     %tr
-      %th name
-      %th id
-      %th party
-      %th state
-      %th record
+      %th.name name
+      %th.id id
+      %th.party party
+      %th.state state
+      %th.record record
+      %th.bio bio
   %tbody
   - @members.members.each do |member|
     %tr
-      %td= member.name
-      %td= member.id
-      %td= member.party
-      %td= member.state
-      %td
+      %td.name= member.name
+      %td.id= member.id
+      %td.party= member.party
+      %td.state= member.state
+      %td.record
         %a{:href=>("http://localhost:3000/congress/members/#{member.id}/votes")}= "link"
-    
-  %tr
-    %th
+      %td.bio
+        %a{:href=>("http://localhost:3000/congress/members/#{member.id}")}= "link"
