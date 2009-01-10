@@ -20,7 +20,7 @@ class Congressinatra < Sinatra::Base
   
   # http://localhost:3000/congress/109/house/members  
   get '/congress/:congress/:chamber/members' do
-    @member_list = CongressApi::Members.new(params)
+    @members = CongressApi::Members.new(params)
     haml :members
   end
   
@@ -119,17 +119,17 @@ __END__
       %th position
       %th rollcall
   %tbody
-  - @v.each do |vote|
+  - @votes.votes.each do |vote|
     %tr
-      %td= vote['chamber'].first
-      %td= vote['time'].first
-      %td= vote['date'].first
-      %td= vote['roll_call'].first
-      %td= vote['session'].first
-      %td= vote['congress'].first
-      %td= vote['position'].first
+      %td= vote.chamber
+      %td= vote.time
+      %td= vote.date
+      %td= vote.roll_call
+      %td= vote.session
+      %td= vote.congress
+      %td= vote.position
       %td
-        %a{:href=>("/congress/#{vote['congress']}/#{vote['chamber']}/sessions/#{vote['session']}/votes/#{vote['roll_call']}")}= "link"
+        %a{:href=>("/congress/#{vote.congress}/#{vote.chamber}/sessions/#{vote.session}/votes/#{vote.roll_call}")}= "link"
       
 @@members
 #member_list
@@ -143,7 +143,7 @@ __END__
       %th state
       %th record
   %tbody
-  - @member_list.members.each do |member|
+  - @members.members.each do |member|
     %tr
       %td= member.name
       %td= member.id
