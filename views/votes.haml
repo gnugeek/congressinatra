@@ -1,0 +1,25 @@
+#votes
+%table
+  %caption= "Votes for #{@member_id}"
+  %thead
+    %tr
+      %th chamber
+      %th time
+      %th date
+      %th roll_call
+      %th session
+      %th congress
+      %th position
+      %th rollcall
+  %tbody
+  - @votes.votes.each do |vote|
+    %tr
+      %td= vote.chamber
+      %td= vote.time
+      %td= vote.date
+      %td= vote.roll_call
+      %td= vote.session
+      %td= vote.congress
+      %td= vote.position
+      %td
+        %a{:href=>("/congress/#{vote.congress}/#{vote.chamber}/sessions/#{vote.session}/votes/#{vote.roll_call}")}= "link"

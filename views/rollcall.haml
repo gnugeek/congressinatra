@@ -1,0 +1,70 @@
+#bill_info
+  %table
+    %caption Bill Info
+    %tbody
+      %tr
+        %th Bill Number
+        %td= @rc.bill_number
+        %tr
+        %th Description
+        %td= @rc.description
+
+%p
+
+#democratic_vote      
+  %table{:id => 'democratic'}
+    %caption Democratic Vote
+    %tr
+      %th Majority Position
+      %td= @rc.democratic_majority_position
+    %tr
+      %th Yes Votes
+      %td= @rc.democratic_yes
+    %tr
+      %th No Votes
+      %td= @rc.democratic_no
+    %tr
+      %th Voted Present
+      %td= @rc.democratic_present
+    %tr
+      %th Not Voting
+      %td= @rc.democratic_not_voting
+
+#republican_vote
+  %table
+    %caption Republican Vote
+    %tr
+      %th Majority Position
+      %td= @rc.republican_majority_position
+    %tr
+      %th Yes Votes
+      %td= @rc.republican_yes
+    %tr
+      %th No Votes
+      %td= @rc.republican_no
+    %tr
+      %th Voted Present
+      %td= @rc.republican_present
+    %tr
+      %th Not Voting
+      %td= @rc.republican_not_voting
+
+#independent_vote
+  %table
+    %caption Independent Vote
+    %tr
+      %th Majority Position
+      %td= 'N/A'
+      
+    %tr
+      %th Yes Votes
+      %td= @rc.independent_yes
+    %tr
+      %th No Votes
+      %td= @rc.independent_no
+    %tr
+      %th Voted Present
+      %td= @rc.independent_present
+    %tr
+      %th Not Voting
+      %td= @rc.independent_not_voting

@@ -1,0 +1,22 @@
+#member_list
+%table
+  %caption Congressional Members
+  %thead
+    %tr
+      %th name
+      %th id
+      %th party
+      %th state
+      %th record
+  %tbody
+  - @members.members.each do |member|
+    %tr
+      %td= member.name
+      %td= member.id
+      %td= member.party
+      %td= member.state
+      %td
+        %a{:href=>("http://localhost:3000/congress/members/#{member.id}/votes")}= "link"
+    
+  %tr
+    %th
