@@ -1,0 +1,625 @@
+<?xml version="1.0"?>
+<result_set>
+  <status>OK</status>
+  <copyright>Copyright (c) 2009 The New York Times Company.  All Rights Reserved.</copyright>
+  <results>
+    <congress>110</congress>
+    <chamber>Senate</chamber>
+    <num_results>102</num_results>
+    <offset>0</offset>
+    <members>
+      <member>
+        <id>A000069</id>
+        <name>Daniel Akaka</name>
+        <party>D</party>
+        <state>HI</state>
+      </member>
+      <member>
+        <id>A000109</id>
+        <name>Wayne Allard</name>
+        <party>R</party>
+        <state>CO</state>
+      </member>
+      <member>
+        <id>A000360</id>
+        <name>Lamar Alexander</name>
+        <party>R</party>
+        <state>TN</state>
+      </member>
+      <member>
+        <id>B000243</id>
+        <name>Max Baucus</name>
+        <party>D</party>
+        <state>MT</state>
+      </member>
+      <member>
+        <id>B000382</id>
+        <name>Robert Bennett</name>
+        <party>R</party>
+        <state>UT</state>
+      </member>
+      <member>
+        <id>B000444</id>
+        <name>Joseph Biden</name>
+        <party>D</party>
+        <state>DE</state>
+      </member>
+      <member>
+        <id>B000468</id>
+        <name>Jeff Bingaman</name>
+        <party>D</party>
+        <state>NM</state>
+      </member>
+      <member>
+        <id>B000611</id>
+        <name>Christopher Bond</name>
+        <party>R</party>
+        <state>MO</state>
+      </member>
+      <member>
+        <id>B000711</id>
+        <name>Barbara Boxer</name>
+        <party>D</party>
+        <state>CA</state>
+      </member>
+      <member>
+        <id>B000944</id>
+        <name>Sherrod Brown</name>
+        <party>D</party>
+        <state>OH</state>
+      </member>
+      <member>
+        <id>B000953</id>
+        <name>Sam Brownback</name>
+        <party>R</party>
+        <state>KS</state>
+      </member>
+      <member>
+        <id>B001066</id>
+        <name>Jim Bunning</name>
+        <party>R</party>
+        <state>KY</state>
+      </member>
+      <member>
+        <id>B001135</id>
+        <name>Richard Burr</name>
+        <party>R</party>
+        <state>NC</state>
+      </member>
+      <member>
+        <id>B001210</id>
+        <name>Robert Byrd</name>
+        <party>D</party>
+        <state>WV</state>
+      </member>
+      <member>
+        <id>B001233</id>
+        <name>Evan Bayh</name>
+        <party>D</party>
+        <state>IN</state>
+      </member>
+      <member>
+        <id>B001261</id>
+        <name>John Barrasso</name>
+        <party>R</party>
+        <state>WY</state>
+      </member>
+      <member>
+        <id>C000127</id>
+        <name>Maria Cantwell</name>
+        <party>D</party>
+        <state>WA</state>
+      </member>
+      <member>
+        <id>C000141</id>
+        <name>Ben Cardin</name>
+        <party>D</party>
+        <state>MD</state>
+      </member>
+      <member>
+        <id>C000174</id>
+        <name>Thomas Carper</name>
+        <party>D</party>
+        <state>DE</state>
+      </member>
+      <member>
+        <id>C000286</id>
+        <name>Saxby Chambliss</name>
+        <party>R</party>
+        <state>GA</state>
+      </member>
+      <member>
+        <id>C000560</id>
+        <name>Tom Coburn</name>
+        <party>R</party>
+        <state>OK</state>
+      </member>
+      <member>
+        <id>C000567</id>
+        <name>Thad Cochran</name>
+        <party>R</party>
+        <state>MS</state>
+      </member>
+      <member>
+        <id>C000705</id>
+        <name>Kent Conrad</name>
+        <party>D</party>
+        <state>ND</state>
+      </member>
+      <member>
+        <id>C000858</id>
+        <name>Larry Craig</name>
+        <party>R</party>
+        <state>ID</state>
+      </member>
+      <member>
+        <id>C000880</id>
+        <name>Michael Crapo</name>
+        <party>R</party>
+        <state>ID</state>
+      </member>
+      <member>
+        <id>C001035</id>
+        <name>Susan Collins</name>
+        <party>R</party>
+        <state>ME</state>
+      </member>
+      <member>
+        <id>C001041</id>
+        <name>Hillary Clinton</name>
+        <party>D</party>
+        <state>NY</state>
+      </member>
+      <member>
+        <id>C001056</id>
+        <name>John Cornyn</name>
+        <party>R</party>
+        <state>TX</state>
+      </member>
+      <member>
+        <id>C001057</id>
+        <name>Norm Coleman</name>
+        <party>R</party>
+        <state>MN</state>
+      </member>
+      <member>
+        <id>C001070</id>
+        <name>Bob Casey Jr.</name>
+        <party>D</party>
+        <state>PA</state>
+      </member>
+      <member>
+        <id>C001071</id>
+        <name>Bob Corker</name>
+        <party>R</party>
+        <state>TN</state>
+      </member>
+      <member>
+        <id>D000388</id>
+        <name>Christopher Dodd</name>
+        <party>D</party>
+        <state>CT</state>
+      </member>
+      <member>
+        <id>D000407</id>
+        <name>Pete Domenici</name>
+        <party>R</party>
+        <state>NM</state>
+      </member>
+      <member>
+        <id>D000432</id>
+        <name>Byron Dorgan</name>
+        <party>D</party>
+        <state>ND</state>
+      </member>
+      <member>
+        <id>D000563</id>
+        <name>Richard Durbin</name>
+        <party>D</party>
+        <state>IL</state>
+      </member>
+      <member>
+        <id>D000595</id>
+        <name>Jim DeMint</name>
+        <party>R</party>
+        <state>SC</state>
+      </member>
+      <member>
+        <id>D000601</id>
+        <name>Elizabeth Dole</name>
+        <party>R</party>
+        <state>NC</state>
+      </member>
+      <member>
+        <id>E000194</id>
+        <name>John Ensign</name>
+        <party>R</party>
+        <state>NV</state>
+      </member>
+      <member>
+        <id>E000285</id>
+        <name>Michael Enzi</name>
+        <party>R</party>
+        <state>WY</state>
+      </member>
+      <member>
+        <id>F000061</id>
+        <name>Russell Feingold</name>
+        <party>D</party>
+        <state>WI</state>
+      </member>
+      <member>
+        <id>F000062</id>
+        <name>Dianne Feinstein</name>
+        <party>D</party>
+        <state>CA</state>
+      </member>
+      <member>
+        <id>G000359</id>
+        <name>Lindsey Graham</name>
+        <party>R</party>
+        <state>SC</state>
+      </member>
+      <member>
+        <id>G000386</id>
+        <name>Charles Grassley</name>
+        <party>R</party>
+        <state>IA</state>
+      </member>
+      <member>
+        <id>G000445</id>
+        <name>Judd Gregg</name>
+        <party>R</party>
+        <state>NH</state>
+      </member>
+      <member>
+        <id>H000206</id>
+        <name>Tom Harkin</name>
+        <party>D</party>
+        <state>IA</state>
+      </member>
+      <member>
+        <id>H000338</id>
+        <name>Orrin Hatch</name>
+        <party>R</party>
+        <state>UT</state>
+      </member>
+      <member>
+        <id>H001016</id>
+        <name>Kay Hutchison</name>
+        <party>R</party>
+        <state>TX</state>
+      </member>
+      <member>
+        <id>H001028</id>
+        <name>Chuck Hagel</name>
+        <party>R</party>
+        <state>NE</state>
+      </member>
+      <member>
+        <id>I000024</id>
+        <name>James Inhofe</name>
+        <party>R</party>
+        <state>OK</state>
+      </member>
+      <member>
+        <id>I000025</id>
+        <name>Daniel Inouye</name>
+        <party>D</party>
+        <state>HI</state>
+      </member>
+      <member>
+        <id>I000055</id>
+        <name>John Isakson</name>
+        <party>R</party>
+        <state>GA</state>
+      </member>
+      <member>
+        <id>J000177</id>
+        <name>Tim Johnson</name>
+        <party>D</party>
+        <state>SD</state>
+      </member>
+      <member>
+        <id>K000105</id>
+        <name>Edward M. Kennedy</name>
+        <party>D</party>
+        <state>MA</state>
+      </member>
+      <member>
+        <id>K000148</id>
+        <name>John Kerry</name>
+        <party>D</party>
+        <state>MA</state>
+      </member>
+      <member>
+        <id>K000305</id>
+        <name>Herbert Kohl</name>
+        <party>D</party>
+        <state>WI</state>
+      </member>
+      <member>
+        <id>K000352</id>
+        <name>Jon Kyl</name>
+        <party>R</party>
+        <state>AZ</state>
+      </member>
+      <member>
+        <id>K000367</id>
+        <name>Amy Klobuchar</name>
+        <party>D</party>
+        <state>MN</state>
+      </member>
+      <member>
+        <id>L000035</id>
+        <name>Blanche Lincoln</name>
+        <party>D</party>
+        <state>AR</state>
+      </member>
+      <member>
+        <id>L000123</id>
+        <name>Frank Lautenberg</name>
+        <party>D</party>
+        <state>NJ</state>
+      </member>
+      <member>
+        <id>L000174</id>
+        <name>Patrick Leahy</name>
+        <party>D</party>
+        <state>VT</state>
+      </member>
+      <member>
+        <id>L000261</id>
+        <name>Carl Levin</name>
+        <party>D</party>
+        <state>MI</state>
+      </member>
+      <member>
+        <id>L000304</id>
+        <name>Joseph I. Lieberman</name>
+        <party>ID</party>
+        <state>CT</state>
+      </member>
+      <member>
+        <id>L000447</id>
+        <name>Trent Lott</name>
+        <party>R</party>
+        <state>MS</state>
+      </member>
+      <member>
+        <id>L000504</id>
+        <name>Richard Lugar</name>
+        <party>R</party>
+        <state>IN</state>
+      </member>
+      <member>
+        <id>L000550</id>
+        <name>Mary Landrieu</name>
+        <party>D</party>
+        <state>LA</state>
+      </member>
+      <member>
+        <id>M000303</id>
+        <name>John McCain</name>
+        <party>R</party>
+        <state>AZ</state>
+      </member>
+      <member>
+        <id>M000355</id>
+        <name>Mitch McConnell</name>
+        <party>R</party>
+        <state>KY</state>
+      </member>
+      <member>
+        <id>M000639</id>
+        <name>Robert Menendez</name>
+        <party>D</party>
+        <state>NJ</state>
+      </member>
+      <member>
+        <id>M000702</id>
+        <name>Barbara Mikulski</name>
+        <party>D</party>
+        <state>MD</state>
+      </member>
+      <member>
+        <id>M001111</id>
+        <name>Patty Murray</name>
+        <party>D</party>
+        <state>WA</state>
+      </member>
+      <member>
+        <id>M001153</id>
+        <name>Lisa Murkowski</name>
+        <party>R</party>
+        <state>AK</state>
+      </member>
+      <member>
+        <id>M001162</id>
+        <name>Mel Martinez</name>
+        <party>R</party>
+        <state>FL</state>
+      </member>
+      <member>
+        <id>M001170</id>
+        <name>Claire McCaskill</name>
+        <party>D</party>
+        <state>MO</state>
+      </member>
+      <member>
+        <id>N000032</id>
+        <name>Bill Nelson</name>
+        <party>D</party>
+        <state>FL</state>
+      </member>
+      <member>
+        <id>N000180</id>
+        <name>Ben Nelson</name>
+        <party>D</party>
+        <state>NE</state>
+      </member>
+      <member>
+        <id>O000167</id>
+        <name>Barack Obama</name>
+        <party>D</party>
+        <state>IL</state>
+      </member>
+      <member>
+        <id>P000590</id>
+        <name>Mark Pryor</name>
+        <party>D</party>
+        <state>AR</state>
+      </member>
+      <member>
+        <id>R000122</id>
+        <name>Jack Reed</name>
+        <party>D</party>
+        <state>RI</state>
+      </member>
+      <member>
+        <id>R000146</id>
+        <name>Harry Reid</name>
+        <party>D</party>
+        <state>NV</state>
+      </member>
+      <member>
+        <id>R000307</id>
+        <name>Pat Roberts</name>
+        <party>R</party>
+        <state>KS</state>
+      </member>
+      <member>
+        <id>R000361</id>
+        <name>Jay Rockefeller</name>
+        <party>D</party>
+        <state>WV</state>
+      </member>
+      <member>
+        <id>S000033</id>
+        <name>Bernie Sanders</name>
+        <party>I</party>
+        <state>VT</state>
+      </member>
+      <member>
+        <id>S000148</id>
+        <name>Charles Schumer</name>
+        <party>D</party>
+        <state>NY</state>
+      </member>
+      <member>
+        <id>S000320</id>
+        <name>Richard Shelby</name>
+        <party>R</party>
+        <state>AL</state>
+      </member>
+      <member>
+        <id>S000663</id>
+        <name>Olympia Snowe</name>
+        <party>R</party>
+        <state>ME</state>
+      </member>
+      <member>
+        <id>S000709</id>
+        <name>Arlen Specter</name>
+        <party>R</party>
+        <state>PA</state>
+      </member>
+      <member>
+        <id>S000770</id>
+        <name>Debbie Stabenow</name>
+        <party>D</party>
+        <state>MI</state>
+      </member>
+      <member>
+        <id>S000888</id>
+        <name>Ted Stevens</name>
+        <party>R</party>
+        <state>AK</state>
+      </member>
+      <member>
+        <id>S001078</id>
+        <name>John Sununu</name>
+        <party>R</party>
+        <state>NH</state>
+      </member>
+      <member>
+        <id>S001141</id>
+        <name>Jeff Sessions</name>
+        <party>R</party>
+        <state>AL</state>
+      </member>
+      <member>
+        <id>S001142</id>
+        <name>Gordon Smith</name>
+        <party>R</party>
+        <state>OR</state>
+      </member>
+      <member>
+        <id>S001163</id>
+        <name>Ken Salazar</name>
+        <party>D</party>
+        <state>CO</state>
+      </member>
+      <member>
+        <id>T000162</id>
+        <name>Craig Thomas</name>
+        <party>R</party>
+        <state>WY</state>
+      </member>
+      <member>
+        <id>T000250</id>
+        <name>John Thune</name>
+        <party>R</party>
+        <state>SD</state>
+      </member>
+      <member>
+        <id>T000464</id>
+        <name>Jon Tester</name>
+        <party>D</party>
+        <state>MT</state>
+      </member>
+      <member>
+        <id>V000126</id>
+        <name>George Voinovich</name>
+        <party>R</party>
+        <state>OH</state>
+      </member>
+      <member>
+        <id>V000127</id>
+        <name>David Vitter</name>
+        <party>R</party>
+        <state>LA</state>
+      </member>
+      <member>
+        <id>W000154</id>
+        <name>John Warner</name>
+        <party>R</party>
+        <state>VA</state>
+      </member>
+      <member>
+        <id>W000437</id>
+        <name>Roger Wicker</name>
+        <party>R</party>
+        <state>MS</state>
+      </member>
+      <member>
+        <id>W000779</id>
+        <name>Ron Wyden</name>
+        <party>D</party>
+        <state>OR</state>
+      </member>
+      <member>
+        <id>W000802</id>
+        <name>Sheldon Whitehouse</name>
+        <party>D</party>
+        <state>RI</state>
+      </member>
+      <member>
+        <id>W000803</id>
+        <name>Jim Webb</name>
+        <party>D</party>
+        <state>VA</state>
+      </member>
+    </members>
+  </results>
+</result_set>

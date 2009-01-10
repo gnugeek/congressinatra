@@ -1,44 +1,44 @@
 #bio
-%table
+%table.bio
   %caption Bio Information
   %tbody
     %tr
-      %th id
-      %td= @bio.member_id
+      %th.id id
+      %td.id= @bio.member_id
     %tr
-      %th name
-      %td= @bio.name
+      %th.name name
+      %td.name= @bio.name
     %tr
-      %th date_of_birth
-      %td= @bio.date_of_birth
+      %th.date_of_birth date_of_birth
+      %td.date_of_birth= @bio.date_of_birth
     %tr
-      %th gender
-      %td= @bio.gender
+      %th.gender gender
+      %td.gender= @bio.gender
     %tr
-      %th url
-      %td= @bio.url
+      %th.url url
+      %td.url= @bio.url
     %tr
-      %th govtrack_id
-      %td= @bio.govtrack_id
+      %th.govtrack_id govtrack_id
+      %td.govtrack_id= @bio.govtrack_id
       
-%table
+%table.roles
   %caption Roles
   %thead
     %tr
-      %th congress
-      %th chamber
-      %th title
-      %th state
-      %th party
-      %th start_date
-      %th end_date
+      %th.congress congress
+      %th.chamber chamber
+      %th.title title
+      %th.state state
+      %th.party party
+      %th.start_date start_date
+      %th.end_date end_date
   %tbody
   - @bio.roles.each do |role|
     %tr
-      %td= role.congress
-      %td= role.chamber
-      %td= role.title
-      %td= role.state
-      %td= role.party
-      %td= role.start_date
-      %td= role.end_date
+      %td.congress= role.congress
+      %td.chamber= role.chamber
+      %td.title= role.title
+      %td.state= role.state
+      %td.party= role.party
+      %td.start_date= role.start_date
+      %td.end_date= role.end_date

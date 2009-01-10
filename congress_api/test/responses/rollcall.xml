@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<result_set>
+  <status>OK</status>
+  <copyright>Copyright (c) 2009 The New York Times Company.  All Rights Reserved.</copyright>
+  <results>
+    <votes>
+      <vote>
+        <congress>110</congress>
+        <session>2</session>
+        <roll_call>194</roll_call>
+        <bill_number>H.R.4137</bill_number>
+        <question>On the Conference Report</question>
+        <description>H.R. 4137 Conference Report; College Opportunity and Affordability Act of 2008</description>
+        <vote_type>1/2</vote_type>
+        <date>2008-07-31</date>
+        <time>20:26:00</time>
+        <result>Agreed to</result>
+        <democratic>
+          <yes>45</yes>
+          <no>0</no>
+          <present>0</present>
+          <not_voting>4</not_voting>
+          <majority_position>Yes</majority_position>
+        </democratic>
+        <republican>
+          <yes>36</yes>
+          <no>8</no>
+          <present>1</present>
+          <not_voting>4</not_voting>
+          <majority_position>Yes</majority_position>
+        </republican>
+        <independent>
+          <yes>2</yes>
+          <no>0</no>
+          <present>0</present>
+          <not_voting>0</not_voting>
+        </independent>
+        <total>
+          <yes>83</yes>
+          <no>8</no>
+          <present>1</present>
+          <not_voting>8</not_voting>
+          <margin>75</margin>
+        </total>
+      </vote>
+    </votes>
+  </results>
+</result_set>
