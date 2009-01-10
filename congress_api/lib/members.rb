@@ -1,4 +1,5 @@
 module CongressApi
+  
   class Member
     attr_reader :id, :name, :party, :state
     
@@ -10,23 +11,8 @@ module CongressApi
     end
   end
   
-  class Members
-    
+  class Members  
     attr_reader :members
-    
-    LOOKUP = {}
-    
-    self.instance_eval do
-      LOOKUP.each_key do |symbol|
-        define_method(symbol) { @doc.search(LOOKUP[symbol]).inner_html }
-      end
-    
-      define_method(:to_hash) do
-        h = {}
-        LOOKUP.each_key {|k| h[k] = self.send(k) }
-        return h
-      end
-    end
       
     def initialize(params)
       @congress = params[:congress]
