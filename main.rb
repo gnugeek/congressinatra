@@ -2,15 +2,7 @@ require 'rubygems'
 require 'sinatra/base'
 require 'haml'
 require 'yaml'
-require 'xmlsimple'
-require 'net/http'
-require 'rollcall'
-require 'members'
-require 'votes'
-require 'bio'
-
-CONFIG = YAML.load_file('config.yml') unless defined?(CONFIG)
-APIKEY = CONFIG['apikey'] unless defined?(APIKEY)
+require 'congress_api'
 
 class Congressinatra < Sinatra::Base
   
@@ -57,14 +49,12 @@ class Congressinatra < Sinatra::Base
   end
   
   # http://localhost:3000/congress/110/senate/sessions/2/votes/194  
-  get '/congress/:congress/:chamber/sessions/:session/votes/:votes' do
+  get '/congress/:congress/:chamber/sessions/:session/votes/:rollcall' do
     @congress = params[:congress]
     @chamber = params[:chamber]
     @session = params[:session]
-    @votes = params[:votes]
-    url = "http://api.nytimes.com/svc/politics/v2/us/legislative/congress/#{@congress}/#{@chamber}/sessions/#{@session}/votes/#{@votes}?api-key=#{APIKEY}"
-    xml_data = Net::HTTP.get_response(URI.parse(url)).body
-    @rc = Rollcall.new(xml_data)
+    @rollcall = params[:votes]
+    @rc = Rollcall.find_or_create(params)
     haml :rollcall
   end
 
@@ -154,6 +144,7 @@ __END__
       %th id
       %th party
       %th state
+      %th record
   %tbody
   - @m.each do |member|
     %tr
@@ -161,6 +152,8 @@ __END__
       %td= member['id'].first
       %td= member['party'].first
       %td= member['state'].first
+      %td
+        %a{:href=>("http://localhost:3000/congress/members/#{member['id']}/votes")}= "link"
     
   %tr
     %th
