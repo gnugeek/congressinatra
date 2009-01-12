@@ -2,7 +2,7 @@ require 'rubygems'
 require 'sinatra/base'
 require 'haml'
 require 'yaml'
-require 'congress_api/base'
+require 'congredi'
 
 class Congressinatra < Sinatra::Base
   
